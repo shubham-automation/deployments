@@ -33,7 +33,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          env.IMAGE_TAG = ${env.BUILD_NUMBER} 
+          env.IMAGE_TAG = "${env.BUILD_NUMBER}" 
           kubernetesDeploy(configs: "k8s-deployment.yaml", kubeconfigId: "mykubeconfig")
         }
       }
